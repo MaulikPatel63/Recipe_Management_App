@@ -1,0 +1,683 @@
+{
+	"info": {
+		"_postman_id": "535592a2-5cc1-4afc-8829-86b84d4e2f9a",
+		"name": "Recipe Management App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29105713"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Maulik\",\r\n    \"email\": \"maulik.paghadal3301@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"maulik.paghadal3301@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/password-reset",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/password-reset/9fadd391cc623c54c31d048b788d8d8ef1b2cdc3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset",
+								"9fadd391cc623c54c31d048b788d8d8ef1b2cdc3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RECIPES",
+			"item": [
+				{
+					"name": "Add Recipe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOnsiX2lkIjoiNjcxMjk5NGJkNjc1NDg3YTY1MDYzZTcxIiwidXNlcm5hbWUiOiJNYXVsaWsiLCJlbWFpbCI6Im1hdWxpay5wYWdoYWRhbDMzMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkZkUzN21aM1RJVTJwa2UwL1o1aXNCZThxT3pQTm1WZHhDWGxWMTFlSUJJZmxFYzUxUnBrWC4iLCJpbWFnZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwidXBkYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwiX192IjowfSwiaWF0IjoxNzI5Mjc1ODE4LCJleHAiOjE3Mjk4ODA2MTh9.4-7a-BttTSwKt6WFcC9n7WEzJqthFkE0ScWzvg55FVA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"recipeName\": \"Rice Pilaf\",\r\n  \"recipeTitle\": \"Simple and Flavorful Rice Pilaf\",\r\n  \"ingredients\": [\r\n    \"2 cups white rice (preferably long grain)\",\r\n    \"2 tsp olive oil (or chicken fat)\",\r\n    \"1/2 cup green onion (chopped onion, scallions, or yellow onion)\",\r\n    \"1/2 cup chopped celery\",\r\n    \"4 cups stock (vegetarian or chicken, or a mix of water and stock)\",\r\n    \"2 tsp salt (or seasoned salt)\",\r\n    \"1/4 tsp ground pepper\",\r\n    \"1/8 tsp cayenne\",\r\n    \"1/2 cup fresh parsley (chopped)\"\r\n  ],\r\n  \"instructions\": \"Heat the olive oil in a saucepan over medium heat. Add onions and celery, sauté until softened. Stir in the rice and cook until lightly toasted. Add stock, salt, pepper, and cayenne. Bring to a boil, reduce heat, cover, and simmer for 15-20 minutes until the rice is tender. Fluff with a fork and stir in parsley before serving.\",\r\n  \"cuisineType\": \"Indian\",\r\n  \"cookingTime\": 30,\r\n  \"servings\": 7,\r\n  \"image\": \"https://example.com/rice_pilaf.jpg\",\r\n  \"nutrition\": {\r\n    \"calories\": 250,\r\n    \"fat\": 2.5,\r\n    \"saturatedFat\": 0,\r\n    \"transFat\": 0,\r\n    \"cholesterol\": \"<5mg\",\r\n    \"sodium\": 850,\r\n    \"potassium\": 250,\r\n    \"carbs\": 50,\r\n    \"dietaryFiber\": 1,\r\n    \"sugars\": 2,\r\n    \"protein\": 5,\r\n    \"vitaminA\": 4,\r\n    \"vitaminC\": 8,\r\n    \"calcium\": 2,\r\n    \"iron\": 10\r\n  },\r\n  \"notes\": [\r\n    {\r\n      \"title\": \"Cooking Tip\",\r\n      \"description\": \"Use chicken broth for added flavor or vegetable broth for a vegetarian option.\"\r\n    }\r\n  ],\r\n  \"reviews\": [\r\n    {\r\n      \"stars\": 4,\r\n      \"description\": \"Easy to make and delicious. Would have liked it a bit spicier!\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-get"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limitll",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-get/6712b0b67b0272bda1dfb973",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-get",
+								"6712b0b67b0272bda1dfb973"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe By Title",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-get/rice",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-get",
+								"rice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Recipe",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //   \"recipeName\": \"Rice Milk\",\r\n    \"recipeTitle\": \"Simple and Flavorful Rice Pilaf\",\r\n    //   \"ingredients\": [\r\n    //     \"2 cups white rice (preferably long grain)\",\r\n    //     \"2 tsp olive oil (or chicken fat)\",\r\n    //     \"1/2 cup green onion (chopped onion, scallions, or yellow onion)\",\r\n    //     \"1/2 cup chopped celery\",\r\n    //     \"4 cups stock (vegetarian or chicken, or a mix of water and stock)\",\r\n    //     \"2 tsp salt (or seasoned salt)\",\r\n    //     \"1/4 tsp ground pepper\",\r\n    //     \"1/8 tsp cayenne\",\r\n    //     \"1/2 cup fresh parsley (chopped)\"\r\n    //   ],\r\n    //   \"instructions\": \"Heat the olive oil in a saucepan over medium heat. Add onions and celery, sauté until softened. Stir in the rice and cook until lightly toasted. Add stock, salt, pepper, and cayenne. Bring to a boil, reduce heat, cover, and simmer for 15-20 minutes until the rice is tender. Fluff with a fork and stir in parsley before serving.\",\r\n    //   \"cuisineType\": \"Indian\",\r\n    //   \"cookingTime\": 30,\r\n    //   \"servings\": 7,\r\n    //   \"image\": \"https://example.com/rice_pilaf.jpg\",\r\n    //   \"nutrition\": {\r\n    // \"calories\": 250,\r\n    // \"fat\": 2.5,\r\n    // \"saturatedFat\": 0,\r\n    // \"transFat\": 0,\r\n    // \"cholesterol\": \"<5mg\",\r\n    // \"sodium\": 850,\r\n    // \"potassium\": 250,\r\n    // \"carbs\": 50,\r\n    // \"dietaryFiber\": 1,\r\n    // \"sugars\": 2,\r\n    // \"protein\": 5,\r\n    // \"vitaminA\": 4,\r\n    // \"vitaminC\": 10,\r\n    // \"calcium\": 2,\r\n    // \"iron\": 10\r\n    //   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-update/6712b0b67b0272bda1dfb973",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-update",
+								"6712b0b67b0272bda1dfb973"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Recipe",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-delete/67113419627cabfdb0bc4f8c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-delete",
+								"67113419627cabfdb0bc4f8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Recipe Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b022d195317e95feec23\",\r\n    \"stars\": 3,\r\n    \"description\": \"i wam new 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/review-add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"review-add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecipe Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b022d195317e95feec23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/review-get/6712bcd0f5349481c59ccb34",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"review-get",
+								"6712bcd0f5349481c59ccb34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Recipe Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b2388a17e680d6ffb4b9\",\r\n    \"stars\": 4,\r\n    \"description\": \"i wam new 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/review-update/6712b2388a17e680d6ffb4bb",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"review-update",
+								"6712b2388a17e680d6ffb4bb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecipe Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b022d195317e95feec23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-delete/6712b022d195317e95feec23",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-delete",
+								"6712b022d195317e95feec23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Recipe Note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b2388a17e680d6ffb4b9\",\r\n    \"title\": \"today my class\",\r\n    \"description\": \"i wam new 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/note-add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"note-add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Recipe Note",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b2388a17e680d6ffb4b9\",\r\n    \"title\": \"today my class\",\r\n    \"description\": \"i wam new 89\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/note-update/6712e31594a22060bbf8e523",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"note-update",
+								"6712e31594a22060bbf8e523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Recipe Note",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeId\": \"6712b2388a17e680d6ffb4b9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/note-delete/6712e31594a22060bbf8e523",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"note-delete",
+								"6712e31594a22060bbf8e523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Recipe Note Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef339b3-5014-4d80-8e3d-92cdc76e2661"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/recipe/recipe-upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"recipe-upload"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOnsiX2lkIjoiNjcxMjk5NGJkNjc1NDg3YTY1MDYzZTcxIiwidXNlcm5hbWUiOiJNYXVsaWsiLCJlbWFpbCI6Im1hdWxpay5wYWdoYWRhbDMzMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkZkUzN21aM1RJVTJwa2UwL1o1aXNCZThxT3pQTm1WZHhDWGxWMTFlSUJJZmxFYzUxUnBrWC4iLCJpbWFnZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwidXBkYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwiX192IjowfSwiaWF0IjoxNzI5Mjc1ODE4LCJleHAiOjE3Mjk4ODA2MTh9.4-7a-BttTSwKt6WFcC9n7WEzJqthFkE0ScWzvg55FVA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://personal-blog-app-pearl.vercel.app/",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOnsiX2lkIjoiNjcxMjk5NGJkNjc1NDg3YTY1MDYzZTcxIiwidXNlcm5hbWUiOiJNYXVsaWsiLCJlbWFpbCI6Im1hdWxpay5wYWdoYWRhbDMzMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkZkUzN21aM1RJVTJwa2UwL1o1aXNCZThxT3pQTm1WZHhDWGxWMTFlSUJJZmxFYzUxUnBrWC4iLCJpbWFnZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwidXBkYXRlZEF0IjoiMjAyNC0xMC0xOFQxNzoyMjoxOS4zMDJaIiwiX192IjowfSwiaWF0IjoxNzI5Mjc1ODE4LCJleHAiOjE3Mjk4ODA2MTh9.4-7a-BttTSwKt6WFcC9n7WEzJqthFkE0ScWzvg55FVA",
+			"type": "string"
+		}
+	]
+}
