@@ -96,7 +96,7 @@ To run this project, you will need to add the following environment variables to
 
 The backend is deployed on Vercel.
 
-- **Live Backend URL :** [https://personal-blog-app-frontend-bay.vercel.app/](https://personal-blog-app-frontend-bay.vercel.app/)
+- **Live Backend URL :** [https://recipe-management-app-chi.vercel.app/](https://recipe-management-app-chi.vercel.app/)
 
 
 ## API Reference
